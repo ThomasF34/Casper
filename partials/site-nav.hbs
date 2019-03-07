@@ -1,29 +1,66 @@
+<style>
+.site-header{
+background: #f8f9fa no-repeat center center;
+box-shadow: 0 10px 10px #eee;
+}
+
+.site-header:before{
+	background: none;
+}
+
+.site-nav{
+height:126px;
+top: 0px !important;
+}
+
+.site-nav-right{
+    margin-top: 36px;
+    font-size: 13px;
+}
+
+.nav{
+    text-align: center;
+    font-weight: bold;
+}
+
+.nav li a{
+	color: rgba(0, 0, 0, 0.7);
+}
+
+.nav li{
+	width: 100px;
+}
+
+.nav li.nav-notre-histoire{
+	width:150px; 
+}
+
+
+
+.site-nav-logo img{
+	height: max-content; 
+	max-height: 100px;
+}
+
+
+@media (min-width: 900px){
+	.author-template .post-feed, .home-template .post-feed, .tag-template .post-feed{
+		margin-top: 30px;
+	}
+}
+</style>
+
 <nav class="site-nav">
     <div class="site-nav-left">
-        {{^is "home"}}
             {{#if @site.logo}}
-                <a class="site-nav-logo" href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
+                <a class="site-nav-logo" href="https://leratcurieux.fr"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
             {{else}}
-                <a class="site-nav-logo" href="{{@site.url}}">{{@site.title}}</a>
-            {{/if}}
-        {{/is}}
-        {{#if @site.navigation}}
-            {{navigation}}
-        {{/if}}
+                <a class="site-nav-logo" href="https://leratcurieux.fr">{{@site.title}}</a>
+	    {{/if}}
     </div>
     <div class="site-nav-right">
-        <div class="social-links">
-            {{#if @site.facebook}}
-                <a class="social-link social-link-fb" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
-            {{/if}}
-            {{#if @site.twitter}}
-                <a class="social-link social-link-tw" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
-            {{/if}}
-        </div>
-        {{#if @labs.subscribers}}
-            <a class="subscribe-button" href="#subscribe">Subscribe</a>
-        {{else}}
-            <a class="rss-button" href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS" target="_blank" rel="noopener">{{> "icons/rss"}}</a>
+        {{#if @site.navigation}}
+            {{navigation}}
         {{/if}}
     </div>
 </nav>
