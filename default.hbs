@@ -27,12 +27,17 @@
 
         {{!-- The footer at the very bottom of the screen --}}
 <style>
+.outer{
+	background: white;
+}
+
 .site-header{
+z-index: 101;
 background: #f8f9fa no-repeat center center;
 box-shadow: 0 10px 10px #eee;
 }
 
-.site-header:before{
+.site-header:before, .site-header:after{
 	background: none;
 }
 
