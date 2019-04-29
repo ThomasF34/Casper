@@ -7,6 +7,7 @@ top: 0px !important;
 .site-nav-right{
     margin-top: 36px;
     font-size: 13px;
+    display: unset;
 }
 
 .nav{
@@ -39,14 +40,20 @@ top: 0px !important;
 		margin-top: 30px;
 	}
 }
+
+@media (max-width: 450px){
+	.site-nav-right{
+		display: none;
+	}
+}
 </style>
 
 <nav class="site-nav">
     <div class="site-nav-left">
             {{#if @site.logo}}
-                <a class="site-nav-logo" href="https://leratcurieux.fr"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
+                <a class="site-nav-logo" href="https://blog.leratcurieux.fr"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
             {{else}}
-                <a class="site-nav-logo" href="https://leratcurieux.fr">{{@site.title}}</a>
+                <a class="site-nav-logo" href="https://blog.leratcurieux.fr">{{@site.title}}</a>
 	    {{/if}}
     </div>
     <div class="site-nav-right">
